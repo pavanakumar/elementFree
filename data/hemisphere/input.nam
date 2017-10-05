@@ -1,0 +1,29 @@
+!! Least-squares input
+&lsInput
+  lsTypeString = "taylor" , !! Least-squares type
+  connectivityCheck = .TRUE. , !! Do connectivity checking
+  testLSGrad = .TRUE. !! test the ls by applying to simple test cases
+/
+
+!! Input free-stream conditions
+&input
+  M_inf = 2.0, !! The free-stream Mach number
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  !!! We use axis angle representation of AOA !!
+  !!! one can also give side slip angle       !!
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  axis         = 0.0  0.0  1.0 !! Angle of attack axis
+  angle        = 0.0 !! Angle of attack value (in deg)
+/
+
+!! Solver inputs
+&solver
+  numIter = 10000, !! Total number of iterations to run
+  CFL = 0.5 !! The CFL number
+  numPass = 1, !! Number of passes for explicit RK scheme
+  rkCoeff(1) = 1.0, !! The coeff for the RK scheme
+  resIter = 1, !! Print residuals every resIter iterations
+  solIter = 100, !! Number of iterations to print the solution
+  solFilePrefix = "hemi_solution" !! The solutiion file prefix
+/
+
