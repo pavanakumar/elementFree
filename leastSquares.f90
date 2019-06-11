@@ -287,7 +287,6 @@ contains
     real (kind = 8) :: rloc(3) , Sloc , t_err(5) 
     character :: UPLO = 'U'
  
-!! dilip telephone exchange == 9945848448
 !!! Calculate the Delta_x of point from neighbours
 !!! Calculate the weights of neighbours of points
      do i = 1 , size
